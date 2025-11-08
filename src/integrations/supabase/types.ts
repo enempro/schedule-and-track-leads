@@ -21,6 +21,7 @@ export type Database = {
           id: string
           meeting_date: string | null
           name: string
+          payment_amount: number
           phone: string
           status: Database["public"]["Enums"]["lead_status"]
           updated_at: string
@@ -31,6 +32,7 @@ export type Database = {
           id?: string
           meeting_date?: string | null
           name: string
+          payment_amount?: number
           phone: string
           status?: Database["public"]["Enums"]["lead_status"]
           updated_at?: string
@@ -41,6 +43,7 @@ export type Database = {
           id?: string
           meeting_date?: string | null
           name?: string
+          payment_amount?: number
           phone?: string
           status?: Database["public"]["Enums"]["lead_status"]
           updated_at?: string
@@ -61,7 +64,7 @@ export type Database = {
         | "Devops"
         | "UI/UX designing"
         | "Workflow Automation"
-      lead_status: "open" | "scheduled" | "rejected"
+      lead_status: "open" | "scheduled" | "rejected" | "paid"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -196,7 +199,7 @@ export const Constants = {
         "UI/UX designing",
         "Workflow Automation",
       ],
-      lead_status: ["open", "scheduled", "rejected"],
+      lead_status: ["open", "scheduled", "rejected", "paid"],
     },
   },
 } as const

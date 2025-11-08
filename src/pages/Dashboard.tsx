@@ -13,9 +13,10 @@ export interface Lead {
   phone: string;
   course: string;
   meeting_date: string | null;
-  status: "open" | "scheduled" | "rejected";
+  status: "open" | "scheduled" | "rejected" | "paid";
   created_at: string;
   updated_at: string;
+  payment_amount: number;
 }
 
 const Dashboard = () => {
